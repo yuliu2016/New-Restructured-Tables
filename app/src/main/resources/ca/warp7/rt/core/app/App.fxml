@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+<?import java.net.URL?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            prefWidth="1600" prefHeight="900" minWidth="800" minHeight="450"
+            fx:controller="ca.warp7.rt.core.app.AppController" fx:id="appWindowBoarderPane">
+
+<!--    <stylesheets>-->
+<!--        <URL value="@/ca/warp7/rt/res/style.css"/>-->
+<!--    </stylesheets>-->
+
+    <left>
+        <SplitPane VBox.vgrow="ALWAYS" orientation="VERTICAL" minWidth="200" prefWidth="200" fx:id="listViewSplitPane">
+<!--            <ImageView fitHeight="80" preserveRatio="true">-->
+<!--                <Image url="@/ca/warp7/rt/res/warp7.png"/>-->
+<!--            </ImageView>-->
+            <ListView fx:id="appTabListView"/>
+            <BorderPane style="-fx-background-color: white" fx:id="customSidebarBorderPane"/>
+        </SplitPane>
+    </left>
+
+    <center>
+        <StackPane pickOnBounds="false">
+            <BorderPane fx:id="tabContentBorderPane"/>
+            <BorderPane fx:id="tabContentLayover" maxWidth="0" StackPane.alignment="TOP_RIGHT"/>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT" fx:id="statusBarContainer" visible="false">
+            <HBox styleClass="status-item" HBox.hgrow="ALWAYS" onMouseClicked="#showStatus">
+                <Label text="Loading" fx:id="statusMessageLabel"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#closeCurrentTab">
+                <FontIcon iconLiteral="fas-times:16:1e2e4a"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#toggleFullScreen">
+                <FontIcon iconLiteral="fas-expand:16:1e2e4a"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#toggleFocused">
+                <FontIcon iconLiteral="fas-eye-slash:16:1e2e4a" fx:id="focusIcon"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#doGarbageCollection">
+                <FontIcon iconLiteral="fas-bolt:16:1e2e4a"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#showSettings">
+                <FontIcon iconLiteral="fas-cog:16:1e2e4a"/>
+            </HBox>
+            <HBox styleClass="status-item" onMouseClicked="#toggleSearch">
+                <FontIcon iconLiteral="fas-bars:16:1e2e4a"/>
+            </HBox>
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
