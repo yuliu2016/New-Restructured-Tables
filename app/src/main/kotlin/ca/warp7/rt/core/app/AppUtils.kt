@@ -27,7 +27,7 @@ import org.kordamp.ikonli.javafx.FontIcon
 import java.io.IOException
 
 internal val appFeatures = listOf(
-//        ScannerFeature(),
+        ScannerFeature(),
         ViewsFeature()//,
 //        ,ScannerFeature()
         //ASTFeature(),

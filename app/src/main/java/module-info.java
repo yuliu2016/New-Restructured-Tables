@@ -19,12 +19,13 @@ module rt.app {
     requires org.apache.commons.io;
     requires java.xml;
     requires rt.api;
+    requires com.google.zxing;
+    requires com.google.zxing.javase;
 
     opens ca.warp7.rt.core.app;
     opens ca.warp7.rt.ext.ast;
     opens ca.warp7.rt.ext.formulas;
     opens ca.warp7.rt.ext.scanner;
-    opens ca.warp7.rt.ext.sheet;
     opens ca.warp7.rt.ext.views;
 
     exports ca.warp7.rt.core;
